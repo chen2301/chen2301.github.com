@@ -54,7 +54,7 @@ $(function () {
 				_isExecuted_1 = true;
                 alertDiv.fadeIn();
 
-                $(window).one("devicemotion", function (event) {
+                window.addEventListener("devicemotion", function (event) {
                     deviceMotionHandler(event, function () {
                         alert("Thanks!");
                         // hide the alert
@@ -69,9 +69,10 @@ $(function () {
                         videoPlayer[0].play();
                         console.log("error");
 						alert("Can't get the information.");
+                        $(window).unbind("devicemotion");
                     });
-					$(window).unbind("devicemotion");
-                });
+
+                },false);
             }else {
                 console.log("设备不支持陀螺仪，操作跳过");
             }
