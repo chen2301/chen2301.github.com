@@ -59,14 +59,14 @@ $(function () {
                         window.removeEventListener("devicemotion",handler);
                         alert("Thanks!");
                         // hide the alert
-                        $(".alertDiv").fadeOut();
+                        alertDiv.fadeOut();
                         // continue to play
                         setTimeout(function () {
                             videoPlayer[0].play();
                         }, 500);
                     },function () {
                         window.removeEventListener("devicemotion",handler);
-                        $(alertDiv).hide();
+                        alertDiv.hide();
                         videoPlayer[0].play();
                         console.log("error");
 						alert("Can't get the information.");
