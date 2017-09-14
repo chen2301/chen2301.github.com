@@ -3,6 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <title>Project1</title>
+    <script src="resources/js/lib/iphone-inline-video.min.js"></script>
+    <style>
+        .IIV::-webkit-media-controls-play-button,
+        .IIV::-webkit-media-controls-start-playback-button {
+            opacity: 0;
+            pointer-events: none;
+            width: 5px;
+        }
+        video::-webkit-media-controls-start-playback-button {
+            opacity: 0;
+            pointer-events: none;
+            width: 5px;
+        }
+    </style>
     <link rel="stylesheet" href="resources/css/loading.css">
     <link rel="stylesheet" href="resources/css/index.css">
 </head>
@@ -31,7 +45,7 @@
 
 
 <!--video Player-->
-<video id="videoPlayer" src="resources/videos/video.mp4"  webkit-playsinline preload style="width:100%">
+<video id="videoPlayer" src="resources/videos/video.mp4" playsinline  webkit-playsinline preload style="width:100%">
     HTML5 no support
 </video>
 
