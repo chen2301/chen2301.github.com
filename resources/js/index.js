@@ -1,5 +1,6 @@
 $(function () {
     var videoPlayer = $("#videoPlayer");
+    enableInlineVideo(videoPlayer.get(0));
     var loader = $(".loader");
     var alertDiv = $("#alert-div");
     var scratch_card = $(".scratch_card");
@@ -47,7 +48,7 @@ $(function () {
         _isExecuted_2 = false;
     videoPlayer.on("timeupdate",function (event) {
         var currentTime = parseInt(event.target.currentTime);
-        if(currentTime === 10 && !_isExecuted_1){
+        if(currentTime === 130 && !_isExecuted_1){
             if (window.DeviceMotionEvent) {
                 videoPlayer[0].pause();
 				_isExecuted_1 = true;
@@ -76,7 +77,7 @@ $(function () {
             }
 
         }
-        // 40s
+        // 9s
         else if(currentTime === 9 && !_isExecuted_2){
             _isExecuted_2 = true;
             videoPlayer[0].pause();
