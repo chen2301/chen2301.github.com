@@ -2,9 +2,41 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Test</title>
+    <title>Project1</title>
+    <link rel="stylesheet" href="resources/css/loading.css">
+    <link rel="stylesheet" href="resources/css/index.css">
 </head>
 <body>
-    <h1>Hello Word!</h1>
+<!--loading-->
+<div class="loader">
+    <div class="square-spin">
+        <div></div>
+    </div>
+    <div id="readyBtn">
+        <button id="play">Go!</button>
+    </div>
+</div>
+
+<!--shaking-->
+<div id="alert-div" class="alert-div">
+    <span>Shake your phone and you will see how litter enters the food chain</span>
+</div>
+
+<!--touching-->
+<div class="scratch_card">
+    <canvas id="scratch_card_can"></canvas>
+    <div class="scratch_card_bg"></div>
+</div>
+
+
+
+<!--video Player-->
+<video id="videoPlayer" src="resources/videos/video.mp4" preload style="width:100%">
+    HTML5 no support
+</video>
+
+
+<script src="resources/js/lib/jquery-3.2.1.min.js"></script>
+<script src="resources/js/index.js"></script>
 </body>
 </html>
