@@ -54,8 +54,9 @@ $(function () {
 				_isExecuted_1 = true;
                 alertDiv.fadeIn();
 
-                $(window).one("devicemotion", function (event) {
-                    deviceMotionHandler(event, function () {
+                window.addEventListener("devicemotion", function (event) {
+                    var handler= deviceMotionHandler(event, function () {
+                        window.removeEventListener("devicemotion",handler);
                         alert("Thanks!");
                         // hide the alert
                         $(".alertDiv").fadeOut();
@@ -63,16 +64,14 @@ $(function () {
                         setTimeout(function () {
                             videoPlayer[0].play();
                         }, 500);
-						$(window).unbind("devicemotion");
                     },function () {
+                        window.removeEventListener("devicemotion",handler);
                         $(alertDiv).hide();
                         videoPlayer[0].play();
                         console.log("error");
 						alert("Can't get the information.");
-                        $(window).unbind("devicemotion");
                     });
-
-                });
+                },false);
             }else {
                 console.log("设备不支持陀螺仪，操作跳过");
             }
