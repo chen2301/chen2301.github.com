@@ -108,7 +108,7 @@ $(function () {
     var curShakeX, curShakeY, curShakeZ, lastShakeX, lastShakeY, lastShakeZ = 0;
     function deviceMotionHandler(event, callBack,errorCallBack) {
 
-        var acceleration = event.accelerationIncludingGravity;
+        var acceleration = event.accelerationIncludingGravity || event.originalEvent.accelerationIncludingGravity;
         if(acceleration == null ) {
             if (typeof errorCallBack == 'function'){
                 errorCallBack();
